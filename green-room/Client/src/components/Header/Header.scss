@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: cornflowerblue;
+  &__logo {
+    text-decoration: none;
+    color: darkgreen;
+  }
+  &__box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 320px;
+    height: 50px;
+  }
+  &__about {
+    text-decoration: none;
+    color: white;
+    margin-right: 4px;
+  }
+  &__faq {
+    text-decoration: none;
+    color: white;
+    margin-right: 4px;
+  }
+  &__contact {
+    text-decoration: none;
+    color: white;
+  }
+}

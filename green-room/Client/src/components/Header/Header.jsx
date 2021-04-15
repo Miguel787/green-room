@@ -4,17 +4,26 @@ import "./Header.scss";
 
 function Header() {
   return (
-    <div>
-      <Link to="/">
-        <h1>Home</h1>
-      </Link>
-      <h1>An absolute beauty of a Header bruv</h1>
-      <Link to="/about">
-        <button>About</button>
-      </Link>
-      <Link to="/sign-up">
-        <button>Sign Up</button>
-      </Link>
+    <div className="header">
+      <section className="header__box">
+        <div>
+          <Link to="/" className="header__logo">
+            <h3>Green Room</h3>
+          </Link>
+        </div>
+
+        <div className="header__nav">
+          <Link to="/about" className="header__about">
+            <span>About</span>
+          </Link>
+          <Link to="/sign-up" className="header__faq">
+            <span>FAQ</span>
+          </Link>
+          <Link to="/sign-up" className="header__contact">
+            <span>Contact Us</span>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
