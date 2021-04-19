@@ -5,30 +5,31 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: cornflowerblue;
+  background: #f5cb5c;
   &__logo {
     text-decoration: none;
-    color: darkgreen;
+    width: 100px;
+    height: 100px;
   }
   &__box {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 320px;
-    height: 50px;
+    height: 95px;
   }
   &__about {
     text-decoration: none;
-    color: white;
+    color: #242423;
     margin-right: 4px;
   }
   &__faq {
     text-decoration: none;
-    color: white;
+    color: #242423;
     margin-right: 4px;
   }
   &__contact {
     text-decoration: none;
-    color: white;
+    color: #242423;
   }
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
+import Logo from "../../assets/photos/70b9f23607244c9684ecae021535dcff.png";
 
 function Header() {
   return (
@@ -8,7 +9,7 @@ function Header() {
       <section className="header__box">
         <div>
           <Link to="/" className="header__logo">
-            <h3>Green Room</h3>
+            <img src={Logo} className="header__logo" />
           </Link>
         </div>
 

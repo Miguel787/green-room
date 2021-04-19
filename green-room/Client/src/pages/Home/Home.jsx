@@ -1,11 +1,17 @@
 import React from "react";
 import "./Home.scss";
-
+import Hero from "../../components/Hero/Hero";
+import About from "../../components/About/About";
+import Footer from "../../components/Footer/Footer";
 function Home() {
   return (
-    <div>
-      <h1>super sick home page</h1>
-    </div>
+    <>
+      <div>
+        <Hero />
+        <About />
+        <Footer />
+      </div>
+    </>
   );
 }
 

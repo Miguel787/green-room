@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home/Home.jsx";
 import Header from "./components/Header/Header.jsx";
-import About from "./pages/About/About.jsx";
+
 import SignUp from "./pages/SignUp/SignUp.jsx";
 import UserPage from "./pages/Users/UserPage.jsx";
 import Footer from "./components/Footer/Footer.jsx";
@@ -18,7 +18,6 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
           <Route exact path="/sign-up" component={SignUp} />
           <Route exact path="/userpage" component={UserPage} />
           <Route exact path="/userhome" component={UserHome} />
@@ -27,7 +26,6 @@ function App() {
           <Route exact path="/friendpage" component={FriendPage} />
           <Route exact path="/friendpage/posts" component={FriendPost} />
         </Switch>
-        <Footer />
       </Router>
     </div>
   );
