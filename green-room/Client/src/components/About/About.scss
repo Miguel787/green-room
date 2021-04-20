@@ -1,13 +1,19 @@
+@use "../../partials/partials" as *;
 .about {
   display: flex;
   justify-content: center;
+  background-color: rgba(27, 26, 26);
+  color: white;
   &__box {
-    width: 90%;
+    width: 300px;
     text-align: center;
-    margin-top: 16px;
+    margin-top: 24px;
   }
   &__title {
     margin-bottom: 12px;
+    &--tablet {
+      display: none;
+    }
   }
   &__bass {
     width: 100%;
@@ -19,6 +25,53 @@
     border-radius: 5px;
     border: none;
     background-color: #f5cb5c;
-    margin-top: 12px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+  @include tablet {
+    &__box {
+      width: 768px;
+      display: flex;
+      justify-content: space-between;
+    }
+    &__column {
+      display: flex;
+      flex-direction: column;
+      width: 48%;
+      align-items: center;
+      &--desc {
+        display: flex;
+        flex-direction: column;
+        width: 48%;
+        align-items: center;
+      }
+    }
+    &__title {
+      display: none;
+      &--tablet {
+        display: initial;
+        margin-bottom: 16px;
+      }
+    }
+  }
+  @include desktop {
+    &__box {
+      width: 1440px;
+      align-items: center;
+    }
+    &__column {
+      width: 42%;
+      &--desc {
+        display: flex;
+        flex-direction: column;
+        width: 42%;
+        align-items: center;
+        margin-right: 90px;
+      }
+    }
+    &__button {
+      width: 120px;
+      height: 40px;
+    }
   }
 }

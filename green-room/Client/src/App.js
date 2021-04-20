@@ -2,10 +2,8 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home/Home.jsx";
 import Header from "./components/Header/Header.jsx";
-
 import SignUp from "./pages/SignUp/SignUp.jsx";
 import UserPage from "./pages/Users/UserPage.jsx";
-import Footer from "./components/Footer/Footer.jsx";
 import UserHome from "./pages/Users/UserHome.jsx";
 import EditProfile from "./pages/Users/EditProfile.jsx";
 import Posts from "./pages/Users/Posts";

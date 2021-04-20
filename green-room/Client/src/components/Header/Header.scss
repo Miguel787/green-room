@@ -1,11 +1,14 @@
+@use "../../partials/_partials" as *;
+
 * {
   margin: 0;
+  font-family: "Helvetica";
 }
 .header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: #f5cb5c;
+  background: #1b1a1a;
   &__logo {
     text-decoration: none;
     width: 100px;
@@ -17,19 +20,47 @@
     align-items: center;
     width: 320px;
     height: 95px;
+    background: #f5cb5c;
   }
   &__about {
     text-decoration: none;
     color: #242423;
     margin-right: 4px;
+    :hover {
+      text-decoration: underline black;
+    }
   }
   &__faq {
     text-decoration: none;
     color: #242423;
     margin-right: 4px;
+    :hover {
+      text-decoration: underline black;
+    }
   }
   &__contact {
     text-decoration: none;
     color: #242423;
+    :hover {
+      text-decoration: underline black;
+    }
+  }
+  @include tablet {
+    &__box {
+      width: 768px;
+      justify-content: space-between;
+    }
+  }
+  @include desktop {
+    &__box {
+      width: 1440px;
+    }
+    &__logo {
+      height: 110px;
+      width: 110px;
+    }
+    &__contact {
+      margin-right: 16px;
+    }
   }
 }

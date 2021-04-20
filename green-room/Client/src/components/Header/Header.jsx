@@ -9,7 +9,7 @@ function Header() {
       <section className="header__box">
         <div>
           <Link to="/" className="header__logo">
-            <img src={Logo} className="header__logo" />
+            <img src={Logo} className="header__logo" alt="Logo" />
           </Link>
         </div>
 

@@ -1,5 +1,5 @@
 import React from "react";
-// import hero from "../../assets/photos/filip-andrejevic-QmX5lw8StoQ-unsplash.jpg";
+import { Link } from "react-router-dom";
 import "./Hero.scss";
 
 function Hero() {
@@ -11,7 +11,9 @@ function Hero() {
             <div className="hero__title">Welcome to GreenRoom</div>
             <div>
               <form>
-                <button className="hero__logIn">Log In</button>
+                <Link to="/userhome">
+                  <button className="hero__logIn">Log In</button>
+                </Link>
                 <button className="hero__signUp">Join</button>
               </form>
             </div>
