@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Hero.scss";
+import Login from "../../components/Login/Login";
+import SignUp from "../../components/SignUp/SignUp";
 
 function Hero() {
   return (
@@ -11,10 +13,8 @@ function Hero() {
             <div className="hero__title">Welcome to GreenRoom</div>
             <div>
               <form>
-                <Link to="/userhome">
-                  <button className="hero__logIn">Log In</button>
-                </Link>
-                <button className="hero__signUp">Join</button>
+                <Login />
+                <SignUp />
               </form>
             </div>
           </div>

@@ -1,13 +1,35 @@
 @use "../../partials/partials" as *;
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 1200ms ease-out, transform 600ms ease-out,
+    visibility 1200ms ease-out;
+  will-change: opacity, transform, visibility;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
 .about {
   display: flex;
   justify-content: center;
   background-color: rgba(27, 26, 26);
   color: white;
+  flex-direction: column;
+  align-items: center;
   &__box {
     width: 300px;
     text-align: center;
     margin-top: 24px;
+    &--reverse {
+      width: 300px;
+      text-align: center;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
   &__title {
     margin-bottom: 12px;
@@ -16,6 +38,10 @@
     }
   }
   &__bass {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  &__drums {
     width: 100%;
     margin-bottom: 12px;
   }
@@ -33,6 +59,12 @@
       width: 768px;
       display: flex;
       justify-content: space-between;
+      &--reverse {
+        flex-direction: row;
+        width: 768px;
+        display: flex;
+        justify-content: space-between;
+      }
     }
     &__column {
       display: flex;
@@ -44,6 +76,13 @@
         flex-direction: column;
         width: 48%;
         align-items: center;
+      }
+      &--desc2 {
+        display: flex;
+        flex-direction: column;
+        width: 48%;
+        align-items: center;
+        justify-content: center;
       }
     }
     &__title {
@@ -58,6 +97,10 @@
     &__box {
       width: 1440px;
       align-items: center;
+      &--reverse {
+        width: 1440px;
+        align-items: center;
+      }
     }
     &__column {
       width: 42%;
@@ -66,7 +109,12 @@
         flex-direction: column;
         width: 42%;
         align-items: center;
-        margin-right: 90px;
+      }
+      &--desc2 {
+        display: flex;
+        flex-direction: column;
+        width: 42%;
+        align-items: center;
       }
     }
     &__button {

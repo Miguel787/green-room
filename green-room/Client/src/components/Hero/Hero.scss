@@ -13,12 +13,14 @@
 
   &__background {
     width: 320px;
-    height: 500px;
+    height: 600px;
     display: flex;
     justify-content: center;
-    background-image: url(../../assets/photos/filip-andrejevic-QmX5lw8StoQ-unsplash.jpg);
+    background-image: linear-gradient(to top, #1b1a1a, transparent),
+      url(../../assets/photos/filip-andrejevic-QmX5lw8StoQ-unsplash.jpg);
     background-size: cover;
     background-position: center;
+
     color: white;
     display: flex;
     align-items: center;
@@ -44,6 +46,7 @@
     border: none;
     background-color: white;
     margin-right: 8px;
+    color: black;
   }
   &__signUp {
     width: 100px;
@@ -51,6 +54,7 @@
     border-radius: 5px;
     border: none;
     background-color: #f5cb5c;
+    color: black;
   }
   @include tablet {
     &__background {
