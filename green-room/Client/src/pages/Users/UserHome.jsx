@@ -7,6 +7,9 @@ function UserHome() {
   return (
     <div className="userHome">
       <div className="userHome__container">
+        <form>
+          <img />
+        </form>
         <div className="userHome__row">
           <img src={Friend} className="userHome__friendAvatar" />
           <p>01/19/2021</p>

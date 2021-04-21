@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function MyVerticallyCenteredModal(props) {
   return (
@@ -27,9 +28,15 @@ function MyVerticallyCenteredModal(props) {
         </form>
       </Modal.Body>
       <Modal.Footer className="form__modal">
-        <Button variant="dark" onClick={props.onHide} className="hero__signUp">
-          Click To Join
-        </Button>
+        <Link to="/userhome">
+          <Button
+            variant="dark"
+            onClick={props.onHide}
+            className="hero__signUp"
+          >
+            Click To Join
+          </Button>
+        </Link>
       </Modal.Footer>
     </Modal>
   );
