@@ -2,13 +2,11 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home/Home.jsx";
 import Header from "./components/Header/Header.jsx";
-import SignUp from "./pages/SignUp/SignUp.jsx";
 import UserPage from "./pages/Users/UserPage.jsx";
 import UserHome from "./pages/Users/UserHome.jsx";
-import EditProfile from "./pages/Users/EditProfile.jsx";
-import Posts from "./pages/Users/Posts";
-import FriendPage from "./pages/Friends/FriendPage.jsx";
-import FriendPost from "./pages/Friends/FriendPost.jsx";
+import Venues from "./pages/Users/Venues";
+import Store from "./pages/Store/Store.jsx";
+
 function App() {
   return (
     <div>
@@ -16,13 +14,10 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/sign-up" component={SignUp} />
           <Route exact path="/userpage" component={UserPage} />
           <Route exact path="/userhome" component={UserHome} />
-          <Route exact path="/editProfile" component={EditProfile} />
-          <Route exact path="/posts" component={Posts} />
-          <Route exact path="/friendpage" component={FriendPage} />
-          <Route exact path="/friendpage/posts" component={FriendPost} />
+          <Route exact path="/venues" component={Venues} />
+          <Route exact path="/store" component={Store} />
         </Switch>
       </Router>
     </div>

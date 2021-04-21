@@ -1,0 +1,16 @@
+.formPost {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  &__input {
+    border-radius: 5px;
+    background: #fafafa;
+    height: 200px;
+    resize: none;
+    padding: 8px;
+  }
+  &__modal {
+    background: #1b1a1a;
+    color: #f5cb5c;
+  }
+}

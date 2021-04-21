@@ -1,8 +1,8 @@
 import React from "react";
 import "./Footer.scss";
-import Facebook from "../../assets/photos/icons8-facebook-50.png";
-import Twitter from "../../assets/photos/icons8-twitter-50.png";
-import Instagram from "../../assets/photos/icons8-instagram-50.png";
+import Facebook from "../../assets/photos/icons/icons8-facebook-50.png";
+import Twitter from "../../assets/photos/icons/icons8-twitter-50.png";
+import Instagram from "../../assets/photos/icons/icons8-instagram-50.png";
 import Logo from "../../assets/photos/70b9f23607244c9684ecae021535dcff.png";
 function Footer() {
   return (

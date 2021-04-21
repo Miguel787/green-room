@@ -34,7 +34,7 @@ function MyVerticallyCenteredModal(props) {
             onClick={props.onHide}
             className="hero__signUp"
           >
-            Click To Join
+            Join Now!
           </Button>
         </Link>
       </Modal.Footer>
