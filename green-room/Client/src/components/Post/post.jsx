@@ -25,7 +25,7 @@ function MyVerticallyCenteredModal(props) {
           <Button
             variant="light"
             onClick={props.onHide}
-            className="userHome__post"
+            className="hero__signUp"
           >
             Post
           </Button>
@@ -43,7 +43,7 @@ function Post() {
       <Button
         variant="light"
         onClick={() => setModalShow(true)}
-        className="userHome__Post"
+        className="userHome__post"
       >
         Post what's on your mind!
       </Button>

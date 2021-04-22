@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Hero.scss";
 import Login from "../../components/Login/Login";
 import SignUp from "../../components/SignUp/SignUp";

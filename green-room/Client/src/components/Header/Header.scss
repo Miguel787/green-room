@@ -50,6 +50,9 @@
       width: 768px;
       justify-content: space-between;
     }
+    &__contact {
+      margin-right: 12px;
+    }
   }
   @include desktop {
     &__box {
