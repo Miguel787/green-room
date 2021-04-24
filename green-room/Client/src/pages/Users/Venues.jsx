@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Friend from "../../assets/photos/profileImg/Screenshot from 2021-04-19 21-26-24.png";
 import "./Styles/Venues.scss";
 import Profile from "../../assets/photos/profileImg/Screenshot from 2021-04-21 16-07-50.png";
@@ -10,7 +10,32 @@ import { Link } from "react-router-dom";
 import Groups from "../../assets/photos/icons/icons8-user-group-30.png";
 import Bands from "../../assets/photos/icons/icons8-concert-50.png";
 import Gigs from "../../assets/photos/icons/icons8-schedule-50.png";
+
+// const { REACT_APP_API_BASE_URL, REACT_APP_BEARER_TOKEN } = process.env;
 function Venues() {
+  // const [venue, setVenue] = useState("");
+  // console.log(REACT_APP_API_BASE_URL);
+  // console.log(REACT_APP_BEARER_TOKEN);
+  // function handleChange(event) {
+  //   event.preventDefault();
+  //   let location = event.target.value;
+  //   console.log(location);
+
+  //   setVenue(location);
+  // }
+  // let myHeaders = new Headers();
+  // myHeaders.append("Authorization", "Bearer" + REACT_APP_BEARER_TOKEN);
+
+  // fetch(`${REACT_APP_API_BASE_URL}${venue}`, {
+  //   headers: myHeaders,
+  // })
+  //   .then((res) => {
+  //     return res.json();
+  //   })
+  //   .then((json) => {
+  //     console.log(json);
+  //   });
+
   return (
     <>
       {/* left section for desktop */}
@@ -97,6 +122,7 @@ function Venues() {
                   type="text"
                   placeholder="Search by Location"
                   className="venues__search"
+                  // onChange={handleChange}
                 ></input>
               </form>
               <div className="venues__postBox">

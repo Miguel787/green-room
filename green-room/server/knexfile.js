@@ -3,10 +3,11 @@
 module.exports = {
   client: "mysql",
   connection: {
-    host: "127.0.0.1",
-    user: "sammy",
+    host: "localhost",
+    user: "pepe",
     password: "password",
-    database: "greenroom",
+    database: "pepesVictory",
     charset: "utf8",
+    insecureAuth: true,
   },
 };
