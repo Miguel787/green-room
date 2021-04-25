@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Friend from "../../assets/photos/profileImg/Screenshot from 2021-04-19 21-26-24.png";
 import "./Styles/Venues.scss";
 import Profile from "../../assets/photos/profileImg/Screenshot from 2021-04-21 16-07-50.png";
@@ -10,31 +10,34 @@ import { Link } from "react-router-dom";
 import Groups from "../../assets/photos/icons/icons8-user-group-30.png";
 import Bands from "../../assets/photos/icons/icons8-concert-50.png";
 import Gigs from "../../assets/photos/icons/icons8-schedule-50.png";
+import axios from "axios";
 
-// const { REACT_APP_API_BASE_URL, REACT_APP_BEARER_TOKEN } = process.env;
 function Venues() {
-  // const [venue, setVenue] = useState("");
-  // console.log(REACT_APP_API_BASE_URL);
-  // console.log(REACT_APP_BEARER_TOKEN);
-  // function handleChange(event) {
-  //   event.preventDefault();
-  //   let location = event.target.value;
-  //   console.log(location);
+  const [venue, setVenue] = useState("");
+  const url = "http://localhost:8080/api/venues";
 
-  //   setVenue(location);
-  // }
-  // let myHeaders = new Headers();
-  // myHeaders.append("Authorization", "Bearer" + REACT_APP_BEARER_TOKEN);
+  function handleChange(event) {
+    event.preventDefault();
+    let location = event.target.value;
+    console.log(location);
 
-  // fetch(`${REACT_APP_API_BASE_URL}${venue}`, {
-  //   headers: myHeaders,
-  // })
-  //   .then((res) => {
-  //     return res.json();
-  //   })
-  //   .then((json) => {
-  //     console.log(json);
-  //   });
+    setVenue(location);
+  }
+
+  useEffect(() => {
+    getAllVenues();
+  }, []);
+
+  const getAllVenues = () => {
+    axios
+      .get(url)
+      .then((res) => {
+        const allVenues = res.data;
+        setVenue(allVenues);
+        console.log(res.data);
+      })
+      .catch((error) => console.error(`Error: ${error}`));
+  };
 
   return (
     <>
@@ -122,23 +125,37 @@ function Venues() {
                   type="text"
                   placeholder="Search by Location"
                   className="venues__search"
-                  // onChange={handleChange}
+                  onChange={handleChange}
+                  required
                 ></input>
+                <button
+                  onChange={handleChange}
+                  type="submit"
+                  className="venues__button"
+                >
+                  Search
+                </button>
               </form>
-              <div className="venues__postBox">
-                <div className="venues__row">
-                  <img
-                    src={Friend}
-                    className="venues__friendAvatar"
-                    alt="Friend"
-                  />
-                  <p className="venues__name">VENUE NAME</p>
-                  <p className="venues__date">(123)456-7890</p>
-                </div>
-                <p className="venues__border">DISPLAY ADDRESS</p>
-              </div>
+              {venue &&
+                venue.map((list, index) => (
+                  <div className="venues__postBox">
+                    <div className="venues__row">
+                      <img
+                        src={list.image_url}
+                        className="venues__friendAvatar"
+                        alt="Friend"
+                      />
+                      <p className="venues__name">{list.name}</p>
+                      <p className="venues__date">{list.display_phone}</p>
+                    </div>
+                    <p className="venues__border">
+                      {list.location.display_address}
+                    </p>
+                  </div>
+                ))}
             </div>
           </div>
+
           {/* rightside gigs */}
           <div className="rightside">
             <div className="rightside__schedule">

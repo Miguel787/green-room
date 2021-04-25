@@ -9,6 +9,16 @@
   border-radius: 5px;
   padding: 12px 0px;
   background: #212121;
+  &__button {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f5cb5c;
+    color: black;
+    margin-top: 12px;
+    margin-left: 200px;
+  }
   h3 {
     margin-left: 16px;
   }
@@ -83,6 +93,9 @@
     &__container {
       width: 500px;
     }
+    &__button {
+      margin-left: 378px;
+    }
     &__date {
       margin-left: 20px;
       margin-right: 5px;
@@ -95,6 +108,9 @@
     }
     &__date {
       margin-right: 5px;
+    }
+    &__button {
+      margin-left: 647px;
     }
   }
 }
