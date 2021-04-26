@@ -42,40 +42,44 @@ function Venues() {
   return (
     <>
       {/* left section for desktop */}
-      <div className="bigBox">
-        <div className="bigBox__box">
-          <section className="leftside">
-            <div className="leftside__row">
-              <img src={Profile} className="leftside__avatar" alt="profile" />
-              <h6 className="leftside__names">Ashley Glensomething</h6>
+      <div className="bigBoxVenue">
+        <div className="bigBoxVenue__box">
+          <section className="leftsideVenue">
+            <div className="leftsideVenue__row">
+              <img
+                src={Profile}
+                className="leftsideVenue__avatar"
+                alt="profile"
+              />
+              <h6 className="leftsideVenue__names">Ashley Glensomething</h6>
             </div>
-            <div className="leftside__row">
+            <div className="leftsideVenue__row">
               <img src={Bands} className="userHome__icons--size" alt="bands" />
-              <h6 className="leftside__names">Bands</h6>
+              <h6 className="leftsideVenue__names">Bands</h6>
             </div>
-            <div className="leftside__row">
+            <div className="leftsideVenue__row">
               <img src={Gigs} className="userHome__icons--size" alt="gigs" />
-              <h6 className="leftside__names">Gigs</h6>
+              <h6 className="leftsideVenue__names">Gigs</h6>
             </div>
-            <div className="leftside__row">
+            <div className="leftsideVenue__row">
               <img
                 src={Groups}
                 className="userHome__icons--size"
                 alt="groups"
               />
-              <h6 className="leftside__names">Communities</h6>
+              <h6 className="leftsideVenue__names">Communities</h6>
             </div>
-            <div className="leftside__row">
+            <div className="leftsideVenue__row">
               <img
                 src={Places}
                 className="userHome__icons--size"
                 alt="places"
               />
-              <h6 className="leftside__names">Venues</h6>
+              <h6 className="leftsideVenue__names">Venues</h6>
             </div>
-            <div className="leftside__row">
+            <div className="leftsideVenue__row">
               <img src={Store} className="userHome__icons--size" alt="store" />
-              <h6 className="leftside__names">Store</h6>
+              <h6 className="leftsideVenue__names">Store</h6>
             </div>
           </section>
           {/* middle section */}
@@ -119,23 +123,27 @@ function Venues() {
                 </Link>
               </div>
               {/* Search section */}
-              <form className="venues">
-                <h3>Find local venues</h3>
-                <input
-                  type="text"
-                  placeholder="Search by Location"
-                  className="venues__search"
-                  onChange={handleChange}
-                  required
-                ></input>
-                <button
-                  onChange={handleChange}
-                  type="submit"
-                  className="venues__button"
-                >
-                  Search
-                </button>
-              </form>
+              <div>
+                <form className="venues">
+                  <div className="venues__formBox">
+                    <h3>Find local venues</h3>
+                    <input
+                      type="text"
+                      placeholder="Search by Location"
+                      className="venues__search"
+                      onChange={handleChange}
+                      required
+                    ></input>
+                    <button
+                      onChange={handleChange}
+                      type="submit"
+                      className="venues__button"
+                    >
+                      Search
+                    </button>
+                  </div>
+                </form>
+              </div>
               {venue &&
                 venue.map((list, index) => (
                   <div className="venues__postBox">
@@ -145,35 +153,43 @@ function Venues() {
                         className="venues__friendAvatar"
                         alt="Friend"
                       />
-                      <p className="venues__name">{list.name}</p>
-                      <p className="venues__date">{list.display_phone}</p>
+                      <div className="venues__column">
+                        <p className="venues__name">{list.name}</p>
+                        <p className="venues__date">{list.display_phone}</p>
+                        <p>
+                          {list.location.address1}, {list.location.city}
+                        </p>
+                        <p className="venues__border">
+                          {list.location.state} {list.location.zip_code}{" "}
+                          {list.location.country}
+                        </p>
+                      </div>
                     </div>
-                    <p className="venues__border">
-                      {list.location.display_address}
-                    </p>
                   </div>
                 ))}
             </div>
           </div>
 
           {/* rightside gigs */}
-          <div className="rightside">
-            <div className="rightside__schedule">
-              <h4 className="rightside__title">Upcoming Gigs</h4>
-              <div className="rightside__row">
-                <h6 className="leftside__names">Vaso on Frenchman </h6>
+          <div className="rightsideVenue">
+            <div className="rightsideVenue__schedule">
+              <h4 className="rightsideVenue__title">Upcoming Gigs</h4>
+              <div className="rightsideVenue__row">
+                <h6 className="leftsideVenue__names">Vaso on Frenchman </h6>
                 <p>6pm-9pm on 5/8</p>
               </div>
-              <div className="rightside__row">
-                <h6 className="leftside__names">30/90 on Frenchman </h6>
+              <div className="rightsideVenue__row">
+                <h6 className="leftsideVenue__names">30/90 on Frenchman </h6>
                 <p>9:30pm-12pm on 5/8</p>
               </div>
-              <div className="rightside__row">
-                <h6 className="leftside__names">Rare Form on Frenchman</h6>
+              <div className="rightsideVenue__row">
+                <h6 className="leftsideVenue__names">Rare Form on Frenchman</h6>
                 <p>6pm-9pm on 5/9</p>
               </div>
-              <div className="rightside__row">
-                <h6 className="leftside__names">Bamboula's on Frenchman</h6>
+              <div className="rightsideVenue__row">
+                <h6 className="leftsideVenue__names">
+                  Bamboula's on Frenchman
+                </h6>
                 <p>9:30pm-12pm on 5/9</p>
               </div>
             </div>

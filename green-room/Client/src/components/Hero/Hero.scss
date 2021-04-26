@@ -4,7 +4,7 @@
   &__box {
     display: flex;
     justify-content: center;
-    background: #1b1a1a;
+    z-index: -1;
   }
   &__title {
     font-size: 26px;
@@ -16,15 +16,20 @@
     height: 600px;
     display: flex;
     justify-content: center;
-    background-image: linear-gradient(to top, #1b1a1a, transparent),
-      url(../../assets/photos/filip-andrejevic-QmX5lw8StoQ-unsplash.jpg);
-    background-size: cover;
-    background-position: center;
-
     color: white;
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-image: linear-gradient(to top, #1b1a1a, transparent),
+      url(../../assets/photos/filip-andrejevic-QmX5lw8StoQ-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  &__video {
+    width: 100%;
+    height: 100%;
+    z-index: -4;
+    display: none;
   }
   &__call {
     width: 299px;
@@ -38,6 +43,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    z-index: 1;
+    position: absolute;
   }
   &__logIn {
     width: 100px;
@@ -59,12 +66,17 @@
   @include tablet {
     &__background {
       width: 768px;
+      height: auto;
+      background: none;
+    }
+    &__video {
+      display: initial;
     }
   }
   @include desktop {
     &__background {
       width: 1440px;
-      height: 750px;
+      height: 810px;
     }
     &__call {
       width: 400px;
