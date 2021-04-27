@@ -10,48 +10,15 @@ import User from "../../assets/photos/icons/icons8-customer-30.png";
 import { Link } from "react-router-dom";
 import Post from "../../components/Post/post";
 import Groups from "../../assets/photos/icons/icons8-user-group-30.png";
-import Bands from "../../assets/photos/icons/icons8-concert-50.png";
-import Gigs from "../../assets/photos/icons/icons8-schedule-50.png";
+import Leftside from "../../components/Sidebars/Leftside";
+import Rightside from "../../components/Sidebars/Rightside";
 function UserHome() {
   return (
     <>
       {/* left section for desktop */}
       <div className="bigBox">
         <div className="bigBox__box">
-          <section className="leftside">
-            <div className="leftside__row">
-              <img src={Profile} className="leftside__avatar" alt="profile" />
-              <h6 className="leftside__names">Ashley Glensomething</h6>
-            </div>
-            <div className="leftside__row">
-              <img src={Bands} className="userHome__icons--size" alt="bands" />
-              <h6 className="leftside__names">Bands</h6>
-            </div>
-            <div className="leftside__row">
-              <img src={Gigs} className="userHome__icons--size" alt="gigs" />
-              <h6 className="leftside__names">Gigs</h6>
-            </div>
-            <div className="leftside__row">
-              <img
-                src={Groups}
-                className="userHome__icons--size"
-                alt="groups"
-              />
-              <h6 className="leftside__names">Communities</h6>
-            </div>
-            <div className="leftside__row">
-              <img
-                src={Places}
-                className="userHome__icons--size"
-                alt="places"
-              />
-              <h6 className="leftside__names">Venues</h6>
-            </div>
-            <div className="leftside__row">
-              <img src={Store} className="userHome__icons--size" alt="store" />
-              <h6 className="leftside__names">Store</h6>
-            </div>
-          </section>
+          <Leftside />
           {/* middle section */}
           <div className="userHome">
             <div className="userHome__container">
@@ -133,27 +100,7 @@ function UserHome() {
               </div>
             </div>
           </div>
-          <div className="rightside">
-            <div className="rightside__schedule">
-              <h4 className="rightside__title">Upcoming Gigs</h4>
-              <div className="rightside__row">
-                <h6 className="leftside__names">Vaso on Frenchman </h6>
-                <p>6pm-9pm on 5/8</p>
-              </div>
-              <div className="rightside__row">
-                <h6 className="leftside__names">30/90 on Frenchman </h6>
-                <p>9:30pm-12pm on 5/8</p>
-              </div>
-              <div className="rightside__row">
-                <h6 className="leftside__names">Rare Form on Frenchman</h6>
-                <p>6pm-9pm on 5/9</p>
-              </div>
-              <div className="rightside__row">
-                <h6 className="leftside__names">Bamboula's on Frenchman</h6>
-                <p>9:30pm-12pm on 5/9</p>
-              </div>
-            </div>
-          </div>
+          <Rightside />
         </div>
       </div>
     </>

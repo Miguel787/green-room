@@ -1,0 +1,45 @@
+@use "../../../partials/partials" as *;
+
+.rightside {
+  display: none;
+
+  @include tablet {
+    display: initial;
+    margin-top: 51px;
+    &__schedule {
+      display: flex;
+      flex-direction: column;
+      margin-left: 38px;
+    }
+    &__row {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid darkgrey;
+      border-radius: 5px;
+      padding: 5px 0px;
+      background: #212121;
+      padding-bottom: 12px;
+      margin-bottom: 6px;
+      padding: 8px;
+      p {
+        margin-bottom: 0;
+        margin-left: 8px;
+      }
+    }
+    &__title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      margin-top: 56px;
+
+      padding: 10px 0px;
+      margin-right: 64px;
+      color: #f5cb5c;
+    }
+  }
+  @include desktop {
+    &__schedule {
+      margin-left: 90px;
+    }
+  }
+}

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Friend from "../../assets/photos/profileImg/Screenshot from 2021-04-19 21-26-24.png";
+import React, { useState } from "react";
 import "./Styles/Venues.scss";
 import Profile from "../../assets/photos/profileImg/Screenshot from 2021-04-21 16-07-50.png";
 import Newsfeed from "../../assets/photos/icons/icons8-home-50.png";
@@ -11,30 +10,30 @@ import Groups from "../../assets/photos/icons/icons8-user-group-30.png";
 import Bands from "../../assets/photos/icons/icons8-concert-50.png";
 import Gigs from "../../assets/photos/icons/icons8-schedule-50.png";
 import axios from "axios";
+import Leftside from "../../components/Sidebars/Leftside";
+import Rightside from "../../components/Sidebars/Rightside";
 
 function Venues() {
   const [venue, setVenue] = useState("");
+  const [search, setSearch] = useState("");
   const url = "http://localhost:8080/api/venues";
 
   function handleChange(event) {
     event.preventDefault();
-    let location = event.target.value;
-    console.log(location);
-
-    setVenue(location);
+    const location = event.target.value;
+    setSearch(location);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    getAllVenues(search);
   }
 
-  useEffect(() => {
-    getAllVenues();
-  }, []);
-
-  const getAllVenues = () => {
+  const getAllVenues = (city) => {
     axios
-      .get(url)
+      .get(`${url}/${city}`)
       .then((res) => {
         const allVenues = res.data;
         setVenue(allVenues);
-        console.log(res.data);
       })
       .catch((error) => console.error(`Error: ${error}`));
   };
@@ -44,44 +43,7 @@ function Venues() {
       {/* left section for desktop */}
       <div className="bigBoxVenue">
         <div className="bigBoxVenue__box">
-          <section className="leftsideVenue">
-            <div className="leftsideVenue__row">
-              <img
-                src={Profile}
-                className="leftsideVenue__avatar"
-                alt="profile"
-              />
-              <h6 className="leftsideVenue__names">Ashley Glensomething</h6>
-            </div>
-            <div className="leftsideVenue__row">
-              <img src={Bands} className="userHome__icons--size" alt="bands" />
-              <h6 className="leftsideVenue__names">Bands</h6>
-            </div>
-            <div className="leftsideVenue__row">
-              <img src={Gigs} className="userHome__icons--size" alt="gigs" />
-              <h6 className="leftsideVenue__names">Gigs</h6>
-            </div>
-            <div className="leftsideVenue__row">
-              <img
-                src={Groups}
-                className="userHome__icons--size"
-                alt="groups"
-              />
-              <h6 className="leftsideVenue__names">Communities</h6>
-            </div>
-            <div className="leftsideVenue__row">
-              <img
-                src={Places}
-                className="userHome__icons--size"
-                alt="places"
-              />
-              <h6 className="leftsideVenue__names">Venues</h6>
-            </div>
-            <div className="leftsideVenue__row">
-              <img src={Store} className="userHome__icons--size" alt="store" />
-              <h6 className="leftsideVenue__names">Store</h6>
-            </div>
-          </section>
+          <Leftside />
           {/* middle section */}
           <div className="userHome">
             <div className="userHome__container">
@@ -124,7 +86,7 @@ function Venues() {
               </div>
               {/* Search section */}
               <div>
-                <form className="venues">
+                <form onSubmit={handleSubmit} className="venues">
                   <div className="venues__formBox">
                     <h3>Find local venues</h3>
                     <input
@@ -134,11 +96,7 @@ function Venues() {
                       onChange={handleChange}
                       required
                     ></input>
-                    <button
-                      onChange={handleChange}
-                      type="submit"
-                      className="venues__button"
-                    >
+                    <button type="submit" className="venues__button">
                       Search
                     </button>
                   </div>
@@ -146,7 +104,7 @@ function Venues() {
               </div>
               {venue &&
                 venue.map((list, index) => (
-                  <div className="venues__postBox">
+                  <div className="venues__postBox" key={list.id}>
                     <div className="venues__row">
                       <img
                         src={list.image_url}
@@ -171,29 +129,7 @@ function Venues() {
           </div>
 
           {/* rightside gigs */}
-          <div className="rightsideVenue">
-            <div className="rightsideVenue__schedule">
-              <h4 className="rightsideVenue__title">Upcoming Gigs</h4>
-              <div className="rightsideVenue__row">
-                <h6 className="leftsideVenue__names">Vaso on Frenchman </h6>
-                <p>6pm-9pm on 5/8</p>
-              </div>
-              <div className="rightsideVenue__row">
-                <h6 className="leftsideVenue__names">30/90 on Frenchman </h6>
-                <p>9:30pm-12pm on 5/8</p>
-              </div>
-              <div className="rightsideVenue__row">
-                <h6 className="leftsideVenue__names">Rare Form on Frenchman</h6>
-                <p>6pm-9pm on 5/9</p>
-              </div>
-              <div className="rightsideVenue__row">
-                <h6 className="leftsideVenue__names">
-                  Bamboula's on Frenchman
-                </h6>
-                <p>9:30pm-12pm on 5/9</p>
-              </div>
-            </div>
-          </div>
+          <Rightside />
         </div>
       </div>
     </>
