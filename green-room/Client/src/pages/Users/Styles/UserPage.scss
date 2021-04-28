@@ -4,6 +4,7 @@
   &__profileImg {
     height: 150px;
     width: 150px;
+    margin-right: 16px;
   }
   &__topBox {
     width: 100%;
@@ -12,11 +13,17 @@
     margin-top: 16px;
     border: 1px solid darkgrey;
     border-radius: 5px;
-    padding: 12px 0px;
+    padding: 12px 12px;
     background: #212121;
     h5 {
       color: #f5cb5c;
     }
+  }
+  &__bandBox {
+    margin-left: 16px;
+  }
+  &__title {
+    margin-top: 12px;
   }
   &__bottomBox {
     width: 100%;
@@ -25,10 +32,13 @@
     margin-top: 16px;
     border: 1px solid darkgrey;
     border-radius: 5px;
-    padding: 12px 0px;
+    padding: 12px 12px;
     background: #212121;
     h5 {
       color: #f5cb5c;
+    }
+    p {
+      margin-bottom: 8px;
     }
   }
 }

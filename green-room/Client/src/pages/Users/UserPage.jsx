@@ -59,15 +59,16 @@ function UserPage() {
               </div>
               {/* profile area */}
               <section className="userPage">
+                <h3 className="userPage__title">Ashley Glensomething</h3>
                 <div className="userPage__topBox">
                   <img src={Ash} className="userPage__profileImg" alt="store" />
-                  <h3>Ashley Glensomething</h3>
+
                   <div>
                     <p>Miami, FL</p>
                     <p>Prefers Smoke Free Venues</p>
                     <p>Open to Busking</p>
                   </div>
-                  <div>
+                  <div className="userPage__bandBox">
                     <h5>Current Bands</h5>
                     <p>Sassy Ash & the Summer Sunshines</p>
                     <p>Crop Top Shots</p>
@@ -85,8 +86,8 @@ function UserPage() {
                     <p>Sitar</p>
                     <h5>Venues Played:</h5>
                     <p>
-                      Red Rocks Amphitheater, Madison Square Garden, American
-                      Airlines, The Apollo theater, Some shack in Tallahassee
+                      Red Rocks Amphitheater, Madison Square Garden, Hard Rock
+                      Stadium, The Apollo theater, Some shack in Tallahassee
                     </p>
                   </div>
                   <div>
@@ -99,7 +100,7 @@ function UserPage() {
                     </p>
                     <h5>Skills:</h5>
                     <p>
-                      Sound Engineering, Singing in 4 LAnguages, Interpretive
+                      Sound Engineering, Singing in 4 Languages, Interpretive
                       dance, Dancing
                     </p>
                   </div>
