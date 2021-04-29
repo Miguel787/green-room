@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import "./Styles/Venues.scss";
-import Profile from "../../assets/photos/profileImg/Screenshot from 2021-04-21 16-07-50.png";
 import Newsfeed from "../../assets/photos/icons/icons8-home-50.png";
 import Places from "../../assets/photos/icons/icons8-location-50.png";
 import Store from "../../assets/photos/icons/icons8-furniture-store-24.png";
 import User from "../../assets/photos/icons/icons8-customer-30.png";
 import { Link } from "react-router-dom";
 import Groups from "../../assets/photos/icons/icons8-user-group-30.png";
-import Bands from "../../assets/photos/icons/icons8-concert-50.png";
-import Gigs from "../../assets/photos/icons/icons8-schedule-50.png";
 import axios from "axios";
 import Leftside from "../../components/Sidebars/Leftside";
 import Rightside from "../../components/Sidebars/Rightside";

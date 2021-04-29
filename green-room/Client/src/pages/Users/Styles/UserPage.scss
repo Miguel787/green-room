@@ -5,10 +5,14 @@
     height: 150px;
     width: 150px;
     margin-right: 16px;
+    border-radius: 5px;
   }
+
   &__topBox {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin-bottom: 16px;
     margin-top: 16px;
     border: 1px solid darkgrey;
@@ -19,15 +23,14 @@
       color: #f5cb5c;
     }
   }
-  &__bandBox {
-    margin-left: 16px;
-  }
+
   &__title {
     margin-top: 12px;
   }
   &__bottomBox {
     width: 100%;
     display: flex;
+    flex-direction: column;
     margin-bottom: 16px;
     margin-top: 16px;
     border: 1px solid darkgrey;
@@ -39,6 +42,47 @@
     }
     p {
       margin-bottom: 8px;
+    }
+  }
+
+  @include tablet {
+    &__topBox {
+      flex-direction: row;
+    }
+    &__bottomBox {
+      flex-direction: row;
+    }
+    &__bandBox {
+      margin-left: 16px;
+    }
+  }
+}
+
+#userPage__calendly {
+  background-color: #1b1a1a !important;
+  overflow-y: visible;
+  margin-bottom: 40px;
+  width: 100%;
+  box-sizing: content-box;
+}
+
+.calendly-inline-widget {
+  background-color: #1b1a1a !important;
+  overflow-y: visible i !important;
+  width: 100%;
+
+  box-sizing: content-box;
+}
+#schedule_form {
+  background-color: #1b1a1a !important;
+  overflow-y: hidden;
+  width: 100%;
+
+  box-sizing: content-box;
+  iframe {
+    height: 1007px;
+    ::-webkit-scrollbar {
+      display: none;
     }
   }
 }

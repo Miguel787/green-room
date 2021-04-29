@@ -8,7 +8,7 @@ function Hero() {
     <div>
       <section className="hero__box">
         <div className="hero__background">
-          <video loop="true" autoplay="autoplay" muted className="hero__video">
+          <video loop={true} autoPlay="autoPlay" muted className="hero__video">
             <source src={Vid} type="video/mp4" />
           </video>
           <div className="hero__call">
