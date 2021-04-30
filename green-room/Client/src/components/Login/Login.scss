@@ -11,4 +11,11 @@
     background: #1b1a1a;
     color: #f5cb5c;
   }
+  &__noDec {
+    color: #f5cb5c;
+    :hover {
+      text-decoration: none;
+      color: #f5cb5c;
+    }
+  }
 }

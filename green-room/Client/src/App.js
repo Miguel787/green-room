@@ -6,21 +6,25 @@ import UserPage from "./pages/Users/UserPage.jsx";
 import UserHome from "./pages/Users/UserHome.jsx";
 import Venues from "./pages/Users/Venues";
 import Store from "./pages/Store/Store.jsx";
+import { AuthProvider } from "./Contexts/AuthContext";
+import SecureRoute from "../src/pages/SecureRoute";
+import ForgotPassword from "./pages/ForgotPassword/ForgotPassword.jsx";
 
 function App() {
   return (
-    <div>
-      <Router>
+    <Router>
+      <AuthProvider>
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/userpage" component={UserPage} />
-          <Route exact path="/userhome" component={UserHome} />
-          <Route exact path="/venues" component={Venues} />
-          <Route exact path="/store" component={Store} />
+          <Route exact path="/forgotpassword" component={ForgotPassword} />
+          <SecureRoute exact path="/userpage" component={UserPage} />
+          <SecureRoute exact path="/userhome" component={UserHome} />
+          <SecureRoute exact path="/venues" component={Venues} />
+          <SecureRoute exact path="/store" component={Store} />
         </Switch>
-      </Router>
-    </div>
+      </AuthProvider>
+    </Router>
   );
 }
 

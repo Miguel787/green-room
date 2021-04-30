@@ -4,7 +4,7 @@ import Bands from "../../assets/photos/icons/icons8-concert-50.png";
 import Gigs from "../../assets/photos/icons/icons8-schedule-50.png";
 import Places from "../../assets/photos/icons/icons8-location-50.png";
 import Store from "../../assets/photos/icons/icons8-furniture-store-24.png";
-import Profile from "../../assets/photos/profileImg/Screenshot from 2021-04-21 16-07-50.png";
+import Profile from "../../assets/photos/profileImg/myface.png";
 import Groups from "../../assets/photos/icons/icons8-user-group-30.png";
 
 function Leftside() {

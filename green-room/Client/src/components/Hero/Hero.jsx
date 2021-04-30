@@ -3,7 +3,10 @@ import "./Hero.scss";
 import Login from "../../components/Login/Login";
 import SignUp from "../../components/SignUp/SignUp";
 import Vid from "../../assets/photos/video/Livemusicconcert.mp4";
+import { useHistory } from "react-router-dom";
+
 function Hero() {
+  const history = useHistory();
   return (
     <div>
       <section className="hero__box">
@@ -15,8 +18,8 @@ function Hero() {
             <div className="hero__title">Welcome to GreenRoom</div>
             <div>
               <form>
-                <Login />
-                <SignUp />
+                <Login history={history} />
+                <SignUp history={history} />
               </form>
             </div>
           </div>

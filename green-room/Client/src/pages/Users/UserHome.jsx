@@ -1,8 +1,10 @@
 import React from "react";
-import Friend from "../../assets/photos/profileImg/Screenshot from 2021-04-19 21-26-24.png";
+import Miguel from "../../assets/photos/profileImg/myface.png";
+import Ashley from "../../assets/photos/profileImg/Screenshot from 2021-04-30 01-56-23.png";
+import Dan from "../../assets/photos/profileImg/Screenshot from 2021-04-30 01-58-23.png";
+import Nuri from "../../assets/photos/profileImg/Screenshot from 2021-04-30 01-59-01.png";
 import "./Styles/UserHome.scss";
-import Glenn from "../../assets/photos/profileImg/Image from iOS.png";
-import Profile from "../../assets/photos/profileImg/Screenshot from 2021-04-21 16-07-50.png";
+import Profile from "../../assets/photos/profileImg/myface.png";
 import Newsfeed from "../../assets/photos/icons/icons8-home-50.png";
 import Places from "../../assets/photos/icons/icons8-location-50.png";
 import Store from "../../assets/photos/icons/icons8-furniture-store-24.png";
@@ -30,7 +32,7 @@ function UserHome() {
                     alt="newsfeed"
                   />
                 </Link>
-                <Link to="/" className="userHome__hover">
+                <Link to="/userhome" className="userHome__hover">
                   <img
                     src={Groups}
                     className="userHome__icons--size"
@@ -71,31 +73,63 @@ function UserHome() {
               <div className="userHome__postBox">
                 <div className="userHome__row">
                   <img
-                    src={Friend}
+                    src={Miguel}
                     className="userHome__friendAvatar"
                     alt="friend"
                   />
-                  <p className="userHome__name">Ashley</p>
+                  <p className="userHome__name">Miguel</p>
                   <p className="userHome__date">01/19/2021</p>
                 </div>
                 <p className="userHome__border">
-                  omg i just had the greatest fart of my life earlier today lol
-                  #automaticwhoppiecushion
+                  The band and I just learned a whole new set for our gigs this
+                  week! Check us out tuesdays and thursdays at Bamboula's!
                 </p>
               </div>
               <div className="userHome__postBox">
                 <div className="userHome__row">
                   <img
-                    src={Glenn}
+                    src={Ashley}
                     className="userHome__friendAvatar"
                     alt="glenn"
                   />
-                  <p>Glenn</p>
+                  <p>Ashley</p>
                   <p className="userHome__date">01/19/2021</p>
                 </div>
                 <p className="userHome__border">
-                  Just listened to the most fire mixtape of 2021 "Coconutbois 2
-                  men"
+                  Just listened to the most fire set down at 30/90! "White Tie
+                  Affair" absolutely crushed it!
+                </p>
+              </div>
+              <div className="userHome__postBox">
+                <div className="userHome__row">
+                  <img
+                    src={Dan}
+                    className="userHome__friendAvatar"
+                    alt="glenn"
+                  />
+                  <p>Dan</p>
+                  <p className="userHome__date">01/19/2021</p>
+                </div>
+                <p className="userHome__border">
+                  The only things worth listening to these days is reggae,
+                  metal, and marc rebillet #SilkKimono
+                </p>
+              </div>
+              <div className="userHome__postBox">
+                <div className="userHome__row">
+                  <img
+                    src={Nuri}
+                    className="userHome__friendAvatar"
+                    alt="glenn"
+                  />
+                  <p>Nurdog</p>
+                  <p className="userHome__date">01/19/2021</p>
+                </div>
+                <p className="userHome__border">
+                  I know this website is for musicians but is anyone intrested
+                  in a lucrative investment regarding my next website "Laceless
+                  Love" - a site for laceless shoe lovers to tie the knot...
+                  without laces of course
                 </p>
               </div>
             </div>

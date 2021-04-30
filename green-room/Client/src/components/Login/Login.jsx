@@ -1,8 +1,31 @@
-import React from "react";
-import { Modal, Button } from "react-bootstrap";
+import React, { useRef, useState } from "react";
 import "./Login.scss";
+import { Modal, Button, Alert } from "react-bootstrap";
+import { useAuth } from "../../Contexts/AuthContext";
+import { Link } from "react-router-dom";
 
 function MyVerticallyCenteredModal(props) {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const { login } = useAuth();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  console.log(props);
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      setError("");
+      setLoading(true);
+      await login(emailRef.current.value, passwordRef.current.value);
+      props.history.push("/userhome");
+      props.hide();
+    } catch (error) {
+      console.log(error);
+    }
+    setLoading(false);
+  }
+
   return (
     <Modal
       {...props}
@@ -14,15 +37,29 @@ function MyVerticallyCenteredModal(props) {
         <Modal.Title id="contained-modal-title-vcenter">Log in</Modal.Title>
       </Modal.Header>
       <Modal.Body className="form__modal">
-        <form className="form">
+        {error && <Alert variant="danger">{error}</Alert>}
+        <form className="form" onSubmit={handleSubmit}>
           <label>Email</label>
-          <input type="email" className="form__input"></input>
+          <input type="email" className="form__input" ref={emailRef}></input>
           <label>Password</label>
-          <input type="password" className="form__input"></input>
+          <input
+            type="password"
+            className="form__input"
+            ref={passwordRef}
+          ></input>
+          <Link to="/forgotpassword" className="form__noDec">
+            <div> Forgot Password?</div>
+          </Link>
         </form>
       </Modal.Body>
       <Modal.Footer className="form__modal">
-        <Button variant="dark" onClick={props.onHide} className="hero__signUp">
+        <div> Need an account? Join now</div>
+        <Button
+          disabled={loading}
+          variant="dark"
+          onClick={handleSubmit}
+          className="hero__signUp"
+        >
           Log in
         </Button>
       </Modal.Footer>
@@ -30,7 +67,7 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-function Login() {
+function Login({ history }) {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
@@ -46,6 +83,7 @@ function Login() {
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
+        history={history}
       />
     </>
   );

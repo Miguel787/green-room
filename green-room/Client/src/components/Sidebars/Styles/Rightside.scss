@@ -29,7 +29,7 @@
     }
     &__row {
       display: flex;
-      width: 259px;
+      width: 230px;
       border: 1px solid darkgrey;
       border-radius: 5px;
       padding: 12px 0px 12px 8px;
@@ -57,6 +57,9 @@
     }
   }
   @include desktop {
+    &__row {
+      width: 259px;
+    }
     &__schedule {
       margin-left: 58px;
     }

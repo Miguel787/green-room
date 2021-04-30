@@ -1,8 +1,34 @@
-import React from "react";
-import { Modal, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import React, { useRef, useState } from "react";
+import { Modal, Button, Alert } from "react-bootstrap";
+import { useAuth } from "../../Contexts/AuthContext";
 
 function MyVerticallyCenteredModal(props) {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const passwordConfirmRef = useRef();
+  const { signup } = useAuth();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  console.log(props);
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+      return setError("Passwords do not match");
+    }
+    try {
+      setError("");
+      setLoading(true);
+      await signup(emailRef.current.value, passwordRef.current.value);
+      props.history.push("/userhome");
+      props.hide();
+    } catch {
+      setError("Failed to create an account");
+    }
+    setLoading(false);
+  }
+
   return (
     <Modal
       {...props}
@@ -14,35 +40,47 @@ function MyVerticallyCenteredModal(props) {
         <Modal.Title id="contained-modal-title-vcenter">Join us</Modal.Title>
       </Modal.Header>
       <Modal.Body className="form__modal">
-        <form className="form">
-          <label>First Name</label>
-          <input type="name" className="form__input"></input>
-          <label>Last Name</label>
-          <input type="name" className="form__input"></input>
+        <form className="form" onSubmit={handleSubmit}>
           <label>Email</label>
-          <input type="email" className="form__input"></input>
+          <input
+            type="email"
+            ref={emailRef}
+            className="form__input"
+            required
+          ></input>
           <label>Password</label>
-          <input type="password" className="form__input"></input>
+          <input
+            type="password"
+            ref={passwordRef}
+            className="form__input"
+            required
+          ></input>
           <label>Confirm Password</label>
-          <input type="password" className="form__input"></input>
+          <input
+            type="password"
+            ref={passwordConfirmRef}
+            className="form__input"
+            required
+          ></input>
         </form>
+        {error && <Alert variant="danger">{error}</Alert>}
       </Modal.Body>
       <Modal.Footer className="form__modal">
-        <Link to="/userhome">
-          <Button
-            variant="dark"
-            onClick={props.onHide}
-            className="hero__signUp"
-          >
-            Join Now!
-          </Button>
-        </Link>
+        <div> Already have an account? Log in!</div>
+        <Button
+          disabled={loading}
+          variant="dark"
+          onClick={handleSubmit}
+          className="hero__signUp"
+        >
+          Join Now!
+        </Button>
       </Modal.Footer>
     </Modal>
   );
 }
 
-function SignUp() {
+function SignUp({ history }) {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
@@ -58,6 +96,7 @@ function SignUp() {
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
+        history={history}
       />
     </>
   );
