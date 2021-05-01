@@ -29,30 +29,42 @@ export default function ForgotPassword() {
 
   return (
     <>
-      <div className="pForget">
-        <Card className="pforget__card">
-          <Card.Body className="pforget__card">
-            <h2 className="text-center mb-4">Password Reset</h2>
-            {error && <Alert variant="danger">{error}</Alert>}
-            {message && <Alert variant="success">{message}</Alert>}
-            <Form onSubmit={handleSubmit}>
-              <Form.Group id="email">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" ref={emailRef} required />
-              </Form.Group>
-              <Button disabled={loading} className="w-100" type="submit">
-                Reset Password
-              </Button>
-            </Form>
-            <div className="">
-              <Link to="/">Login</Link>
-            </div>
-          </Card.Body>
-        </Card>
-        <div className="">
-          Need an account? <Link to="/">Sign Up</Link>
+      <section className="pForget__box">
+        <div className="pForget">
+          <Card className="pforget__card">
+            <Card.Body className="pforget__card" className="form__modal">
+              <h2 className="text-center mb-4">Password Reset</h2>
+              {error && <Alert variant="danger">{error}</Alert>}
+              {message && <Alert variant="success">{message}</Alert>}
+              <Form onSubmit={handleSubmit} className="form__modal">
+                <Form.Group id="email">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control type="email" ref={emailRef} required />
+                </Form.Group>
+                <Button
+                  disabled={loading}
+                  varient="dark"
+                  className="pForget__button"
+                  type="submit"
+                >
+                  Reset Password
+                </Button>
+              </Form>
+              <div className="">
+                <Link to="/" className="form__noDec">
+                  Login
+                </Link>
+              </div>
+            </Card.Body>
+          </Card>
+          <div className="form__modal">
+            Need an account?{" "}
+            <Link to="/" className="form__noDec">
+              Sign Up
+            </Link>
+          </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

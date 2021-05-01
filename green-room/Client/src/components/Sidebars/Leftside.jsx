@@ -13,7 +13,7 @@ function Leftside() {
       <section className="leftside">
         <div className="leftside__toprow">
           <img src={Profile} className="leftside__avatar" alt="profile" />
-          <h6 className="leftside__names">Ashley Glensomething</h6>
+          <h6 className="leftside__names">Miguel Cruz Le Hardy</h6>
         </div>
         <div className="leftside__row">
           <img src={Bands} className="userHome__icons--size" alt="bands" />
