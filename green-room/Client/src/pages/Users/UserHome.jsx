@@ -1,8 +1,5 @@
-import React from "react";
-import Miguel from "../../assets/photos/profileImg/myface.png";
-import Ashley from "../../assets/photos/profileImg/Screenshot from 2021-04-30 01-56-23.png";
-import Dan from "../../assets/photos/profileImg/Screenshot from 2021-04-30 01-58-23.png";
-import Nuri from "../../assets/photos/profileImg/Screenshot from 2021-04-30 01-59-01.png";
+import React, { useEffect, useState } from "react";
+import firebase from "../../firebase";
 import "./Styles/UserHome.scss";
 import Profile from "../../assets/photos/profileImg/myface.png";
 import Newsfeed from "../../assets/photos/icons/icons8-home-50.png";
@@ -14,7 +11,32 @@ import Post from "../../components/Post/post";
 import Groups from "../../assets/photos/icons/icons8-user-group-30.png";
 import Leftside from "../../components/Sidebars/Leftside";
 import Rightside from "../../components/Sidebars/Rightside";
+
 function UserHome() {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const ref = firebase.firestore().collection("posts");
+
+  function getPosts() {
+    setLoading(true);
+    ref.onSnapshot((querySnapshot) => {
+      const comments = [];
+      querySnapshot.forEach((doc) => {
+        comments.push(doc.data());
+      });
+      setPosts(comments);
+      setLoading(false);
+    });
+  }
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <>
       {/* left section for desktop */}
@@ -70,68 +92,21 @@ function UserHome() {
                 />
                 <Post className="userHome__post" />
               </form>
-              <div className="userHome__postBox">
-                <div className="userHome__row">
-                  <img
-                    src={Miguel}
-                    className="userHome__friendAvatar"
-                    alt="friend"
-                  />
-                  <p className="userHome__name">Miguel</p>
-                  <p className="userHome__date">01/19/2021</p>
+
+              {posts.map((post) => (
+                <div className="userHome__postBox" key={post.id}>
+                  <div className="userHome__row">
+                    <img
+                      src={post.avatar}
+                      className="userHome__friendAvatar"
+                      alt="user"
+                    />
+                    <p> {post.name}</p>
+                    <p className="userHome__date">01/19/2021</p>
+                  </div>
+                  <p className="userHome__border">{post.desc}</p>
                 </div>
-                <p className="userHome__border">
-                  The band and I just learned a whole new set for our gigs this
-                  week! Check us out tuesdays and thursdays at Bamboula's!
-                </p>
-              </div>
-              <div className="userHome__postBox">
-                <div className="userHome__row">
-                  <img
-                    src={Ashley}
-                    className="userHome__friendAvatar"
-                    alt="glenn"
-                  />
-                  <p>Ashley</p>
-                  <p className="userHome__date">01/19/2021</p>
-                </div>
-                <p className="userHome__border">
-                  Just listened to the most fire set down at 30/90! "White Tie
-                  Affair" absolutely crushed it!
-                </p>
-              </div>
-              <div className="userHome__postBox">
-                <div className="userHome__row">
-                  <img
-                    src={Dan}
-                    className="userHome__friendAvatar"
-                    alt="glenn"
-                  />
-                  <p>Dan</p>
-                  <p className="userHome__date">01/19/2021</p>
-                </div>
-                <p className="userHome__border">
-                  The only things worth listening to these days is reggae,
-                  metal, and marc rebillet #SilkKimono
-                </p>
-              </div>
-              <div className="userHome__postBox">
-                <div className="userHome__row">
-                  <img
-                    src={Nuri}
-                    className="userHome__friendAvatar"
-                    alt="glenn"
-                  />
-                  <p>Nurdog</p>
-                  <p className="userHome__date">01/19/2021</p>
-                </div>
-                <p className="userHome__border">
-                  I know this website is for musicians but is anyone intrested
-                  in a lucrative investment regarding my next website "Laceless
-                  Love" - a site for laceless shoe lovers to tie the knot...
-                  without laces of course
-                </p>
-              </div>
+              ))}
             </div>
           </div>
           <Rightside />
