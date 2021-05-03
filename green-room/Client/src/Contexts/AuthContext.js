@@ -38,8 +38,6 @@ export function AuthProvider({ children }) {
     login,
     logout,
     resetPassword,
-    // updateEmail,
-    // updatePassword,
   };
 
   return (

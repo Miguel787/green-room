@@ -10,7 +10,6 @@ function MyVerticallyCenteredModal(props) {
   const { login } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  console.log(props);
   async function handleSubmit(e) {
     e.preventDefault();
 
