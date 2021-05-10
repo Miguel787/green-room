@@ -3,31 +3,31 @@
   display: none;
   @include desktop {
     display: initial;
-    margin-top: 51px;
+    margin-top: 3.1875rem;
     &__toprow {
       display: flex;
       align-items: center;
-      margin-bottom: 16px;
-      margin-top: 42px;
-      padding: 10px 0px;
-      margin-left: 8px;
-      margin-right: 64px;
+      margin-bottom: 1rem;
+      margin-top: 2.625rem;
+      padding: 0.625rem 0rem;
+      margin-left: 0.5rem;
+      margin-right: 4rem;
     }
     &__row {
       display: flex;
       align-items: center;
-      margin-bottom: 45px;
-      margin-top: 20px;
-      padding: 10px 0px;
-      margin-left: 8px;
-      margin-right: 64px;
+      margin-bottom: 2.8125rem;
+      margin-top: 1.25rem;
+      padding: 0.625rem 0rem;
+      margin-left: 0.5rem;
+      margin-right: 4rem;
     }
     &__names {
-      margin: 0px 0px 0px 8px;
+      margin: 0rem 0rem 0rem 0.5rem;
     }
     &__avatar {
-      width: 50px;
-      height: 50px;
+      width: 3.125rem;
+      height: 3.125rem;
       border-radius: 50%;
     }
   }

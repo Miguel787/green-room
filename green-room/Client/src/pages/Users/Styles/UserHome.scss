@@ -7,92 +7,92 @@
   height: 100vh;
   &__homeBox {
     display: flex;
-    margin-bottom: 16px;
-    margin-top: 16px;
-    border: 1px solid darkgrey;
-    border-radius: 5px;
-    padding: 12px 0px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border: 0.0625rem solid darkgrey;
+    border-radius: 0.3125rem;
+    padding: 0.75rem 0rem;
     background: #212121;
   }
   &__icons {
     display: flex;
     justify-content: space-between;
-    margin-top: 16px;
+    margin-top: 1rem;
     &--size {
-      width: 35px;
-      height: 35px;
+      width: 2.1875rem;
+      height: 2.1875rem;
     }
   }
   &__hover {
     :hover {
-      border-bottom: 2px solid #f5cb5c;
+      border-bottom: 0.125rem solid #f5cb5c;
     }
   }
   &__textArea {
-    height: 25px;
-    border-radius: 20px;
+    height: 1.5625rem;
+    border-radius: 1.25rem;
   }
   &__date {
-    margin-left: 20px;
+    margin-left: 1.25rem;
   }
   &__friendAvatar {
-    width: 50px;
-    height: 50px;
+    width: 3.125rem;
+    height: 3.125rem;
     border-radius: 50%;
-    margin-right: 12px;
-    margin-left: 10px;
+    margin-right: 0.75rem;
+    margin-left: 0.625rem;
   }
   &__postBox {
-    border: 1px solid darkgrey;
-    border-radius: 5px;
+    border: 0.0625rem solid darkgrey;
+    border-radius: 0.3125rem;
     background: #212121;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
   }
   &__container {
-    width: 320px;
+    width: 20rem;
     display: flex;
     flex-direction: column;
     color: white;
   }
   &__border {
-    margin-bottom: 12px;
-    padding-bottom: 12px;
-    margin-left: 10px;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    margin-left: 0.625rem;
   }
   &__row {
     display: flex;
     align-items: center;
-    padding: 12px 0px;
+    padding: 0.75rem 0rem;
   }
   &__post {
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     text-align: left;
-    width: 227px;
+    width: 14.1875rem;
     color: dimgray;
   }
 
   @include tablet {
     &__container {
-      width: 500px;
+      width: 31.25rem;
     }
     &__date {
-      margin-right: 5px;
+      margin-right: 0.3125rem;
     }
     &__post {
-      width: 400px;
-      margin-right: 20px;
+      width: 25rem;
+      margin-right: 1.25rem;
     }
   }
   @include desktop {
     &__container {
-      width: 768px;
-      margin-left: 40px;
+      width: 48rem;
+      margin-left: 2.5rem;
     }
     &__date {
-      margin-right: 5px;
+      margin-right: 0.3125rem;
     }
     &__post {
-      width: 667px;
+      width: 41.6875rem;
     }
   }
 }
@@ -105,7 +105,7 @@
   justify-content: center;
   @include tablet {
     &__box {
-      width: 768px;
+      width: 48rem;
       display: flex;
       background: #1b1a1a;
       height: 100vh;
@@ -113,7 +113,7 @@
   }
   @include desktop {
     &__box {
-      width: 1440px;
+      width: 90rem;
       display: flex;
       background: #1b1a1a;
       height: 100vh;

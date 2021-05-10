@@ -3,11 +3,11 @@
   flex-direction: column;
   width: 80%;
   &__input {
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     background: #fafafa;
-    height: 200px;
+    height: 12.5rem;
     resize: none;
-    padding: 8px;
+    padding: 0.5rem;
   }
   &__modal {
     background: #1b1a1a;
