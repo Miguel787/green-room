@@ -5,7 +5,7 @@
   align-items: center;
   background-color: rgba(27, 26, 26);
   color: #f5cb5c;
-  padding-bottom: 25px;
+  padding-bottom: 1.5625rem;
   &__column {
     display: flex;
     flex-direction: column;
@@ -13,23 +13,23 @@
     text-align: center;
   }
   &__title {
-    margin-bottom: 12px;
-    margin-top: 24px;
+    margin-bottom: 0.75rem;
+    margin-top: 1.5rem;
   }
   &__logo {
     background-color: #f5cb5c;
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    margin-bottom: 12px;
+    width: 4.375rem;
+    height: 4.375rem;
+    margin-bottom: 0.75rem;
   }
   &__icons {
     display: flex;
     justify-content: space-between;
-    width: 116px;
+    width: 7.25rem;
     &--size {
-      width: 25px;
-      height: 25px;
+      width: 1.5625rem;
+      height: 1.5625rem;
     }
   }
   @include tablet {
@@ -40,25 +40,25 @@
       width: 100%;
     }
     &__column {
-      width: 359px;
+      width: 22.4375rem;
     }
     &__logo {
-      margin: 0px;
+      margin: 0rem;
     }
   }
   @include desktop {
     &__column {
-      width: 600px;
+      width: 37.5rem;
     }
     &__logo {
-      width: 90px;
-      height: 90px;
+      width: 5.625rem;
+      height: 5.625rem;
     }
     &__icons {
-      width: 175px;
+      width: 10.9375rem;
       &--size {
-        width: 40px;
-        height: 40px;
+        width: 2.5rem;
+        height: 2.5rem;
       }
     }
   }

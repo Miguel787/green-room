@@ -11,9 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
-    "bookshelf": "^1.2.0",
-    "knex": "^0.95.4",
-    "mysql": "^2.18.1",
     "yelp-fusion": "^3.0.0"
   }
 }

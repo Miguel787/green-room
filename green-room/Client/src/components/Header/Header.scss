@@ -11,21 +11,21 @@
   background: #1b1a1a;
   &__logo {
     text-decoration: none;
-    width: 100px;
-    height: 100px;
+    width: 6.25rem;
+    height: 6.25rem;
   }
   &__box {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 320px;
-    height: 95px;
+    width: 20rem;
+    height: 5.9375rem;
     background: #f5cb5c;
   }
   &__about {
     text-decoration: none;
     color: #242423;
-    margin-right: 4px;
+    margin-right: 0.25rem;
     :hover {
       text-decoration: underline black;
     }
@@ -33,7 +33,7 @@
   &__faq {
     text-decoration: none;
     color: #242423;
-    margin-right: 4px;
+    margin-right: 0.25rem;
     :hover {
       text-decoration: underline black;
     }
@@ -47,23 +47,23 @@
   }
   @include tablet {
     &__box {
-      width: 768px;
+      width: 48rem;
       justify-content: space-between;
     }
     &__contact {
-      margin-right: 12px;
+      margin-right: 0.75rem;
     }
   }
   @include desktop {
     &__box {
-      width: 1440px;
+      width: 90rem;
     }
     &__logo {
-      height: 110px;
-      width: 110px;
+      height: 6.875rem;
+      width: 6.875rem;
     }
     &__contact {
-      margin-right: 16px;
+      margin-right: 1rem;
     }
   }
 }
