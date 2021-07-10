@@ -99,7 +99,7 @@ function UserPage() {
                       <h5>Current Bands</h5>
                       <p>Stoic City</p>
                       <p>A White Tie Affair</p>
-                      <p>Tchops</p>
+                      <p>Mofongo</p>
                     </div>
                   </div>
                   <div className="userPage__bottomBox">
